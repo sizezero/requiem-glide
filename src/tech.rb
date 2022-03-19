@@ -24,7 +24,9 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
 
   #text str: data['action'].map{ |a| a.capitalize }, layout: 'title'
   #svg data: data['action'].map { |a| GameIcons.get(action2gameIcon[a]).string }, layout: 'picture'
-  
-  save_sheet prefix: 'tech', columns: 4, dir: 'output'
-  save_pdf trim: 37.5, dir: 'output'
+
+  # if multiple saves are listed it seems only one of them works
+  #save_sheet prefix: 'tech', columns: 4, dir: 'output'
+  # default file for save_pdf is sheet.png even though it's a pdf
+  save_pdf file: 'tech.pdf', trim: 37.5, dir: 'output'
 end
