@@ -1,0 +1,5 @@
+output/*.png
+output/*.pdf
+~$*
+.DS_Store
+.~lock.*
