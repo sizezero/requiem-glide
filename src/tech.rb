@@ -41,11 +41,11 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   triangle fill_color: data['dep_down'].map { |a| dep2fill[a]}, stroke_color: data['dep_down'].map { |a| dep2stroke[a]},  layout: 'tdep_down'
 
   # angle calc can't be in the layout file
-  rect  layout: 'body', angle: -Math::PI / 2
-  text str: "line one\nline two\nline three", layout: 'body', angle: -Math::PI / 2
+  #rect  layout: 'body', angle: -Math::PI / 2
+  text str: data['body'], layout: 'body', angle: -Math::PI / 2
 
   #rect layout: 'hex'
-  text layout: 'hex'
+  text color: data['level'].map { |a| a==1 || a==2 ? :black : '#f000'}, layout: 'hex'
 
   #player_colors = data['player'].map { |a| player2color[a] }
   #rect fill_color: player_colors, layout: 'top'
