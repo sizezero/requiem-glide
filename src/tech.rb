@@ -11,6 +11,9 @@ data = Squib.csv file: 'tech.csv'
 #action2gameIcon = { 'wizard'=>'wizard-face', 'prophet'=>'pope-crown', 'follower'=>'prayer', 'leader'=>'king', 'first'=>'play-button' }
 #player2color.default = 'lorc/meat'
 
+levelNum2text = { 1=>'L-I', 2=>'L-II', 3=>'L-III', 4=>'L-IV' }
+levelNum2text.default = '???'
+
 # default size for Deck.new appears to be for portrait poker card
 Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   background color: 'white'
@@ -21,7 +24,7 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
 
   triangle fill_color: :red, layout: 'req'
 
-  text str: 'L-I', layout: 'level'
+  text str: data['level'].map { |a| levelNum2text[a] }, layout: 'level'
 
   triangle fill_color: :blue,  layout: 'tdep_up'
   triangle fill_color: :red,   layout: 'tdep_straight'
