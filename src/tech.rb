@@ -22,8 +22,8 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   background color: 'white'
 
   text str: data['title'], layout: 'title'
-  text str: data['cost'],  layout: 'cost'
-  text str: data['value'], layout: 'value'
+  text str: data['cost'].map { |a| '💲'+a.to_s  }, layout: 'cost'
+  text str: data['value'].map { |a| '🗑🢂💲'+a.to_s }, layout: 'value'
 
   triangle fill_color: data['suit'].map { |a| suit2color[a]  }, layout: 'suit'
 
