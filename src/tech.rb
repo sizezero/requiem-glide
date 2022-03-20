@@ -14,6 +14,9 @@ data = Squib.csv file: 'tech.csv'
 levelNum2text = { 1=>'L-I', 2=>'L-II', 3=>'L-III', 4=>'L-IV' }
 levelNum2text.default = '???'
 
+suit2color = { 'yellow'=>:yellow, 'red'=>:red, 'green'=>:green, 'blue'=>:blue }
+suit2color.default = :white
+
 # default size for Deck.new appears to be for portrait poker card
 Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   background color: 'white'
@@ -22,7 +25,7 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   text str: data['cost'],  layout: 'cost'
   text str: data['value'], layout: 'value'
 
-  triangle fill_color: :red, layout: 'req'
+  triangle fill_color: data['suit'].map { |a| suit2color[a]  }, layout: 'suit'
 
   text str: data['level'].map { |a| levelNum2text[a] }, layout: 'level'
 

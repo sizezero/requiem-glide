@@ -29,9 +29,9 @@ level:
   height: 80
   align: right
 
-# requirements for the next card
+# suit of this card; requirements for the next card
 
-req:
+suit:
   x1: 375
   y1: 90
   x2: 345
