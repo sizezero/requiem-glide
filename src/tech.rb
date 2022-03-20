@@ -17,6 +17,12 @@ levelNum2text.default = '???'
 suit2color = { 'yellow'=>:yellow, 'red'=>:red, 'green'=>:green, 'blue'=>:blue }
 suit2color.default = :white
 
+dep2fill = { 'yellow'=>:yellow, 'red'=>:red, 'green'=>:green, 'blue'=>:blue, ''=>'#f000' }
+dep2fill.default = '#f000'
+
+dep2stroke = { 'yellow'=>:black, 'red'=>:black, 'green'=>:black, 'blue'=>:black, ''=>'#f000' }
+dep2stroke.default = '#f000'
+
 # default size for Deck.new appears to be for portrait poker card
 Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   background color: 'white'
@@ -29,9 +35,10 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
 
   text str: data['level'].map { |a| levelNum2text[a] }, layout: 'level'
 
-  triangle fill_color: :blue,  layout: 'tdep_up'
-  triangle fill_color: :red,   layout: 'tdep_straight'
-  triangle fill_color: :green, layout: 'tdep_down'
+  # it seems lame that to not draw a triangle we have to draw it with full alpha
+  triangle fill_color: data['dep_up'].map { |a| dep2fill[a]}, stroke_color: data['dep_up'].map { |a| dep2stroke[a]},  layout: 'tdep_up'
+  triangle fill_color: data['dep_straight'].map { |a| dep2fill[a]}, stroke_color: data['dep_straight'].map { |a| dep2stroke[a]},  layout: 'tdep_straight'
+  triangle fill_color: data['dep_down'].map { |a| dep2fill[a]}, stroke_color: data['dep_down'].map { |a| dep2stroke[a]},  layout: 'tdep_down'
 
   # angle calc can't be in the layout file
   rect  layout: 'body', angle: -Math::PI / 2
