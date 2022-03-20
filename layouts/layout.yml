@@ -1,4 +1,6 @@
 
+# three lines in upper left: title, cost, value
+
 title:
   x: 90
   y: 90
@@ -19,6 +21,66 @@ value:
   width: 675
   height: 80  
   align: left
+
+level:
+  x: 600
+  y: 90
+  width: 100
+  height: 80
+  align: right
+
+# requirements for the next card
+
+req:
+  x1: 375
+  y1: 90
+  x2: 345
+  y2: 200
+  x3: 405
+  y3: 200
+
+# main body text of the card, this will be rotated 90 degrees
+
+body:
+  x: 300
+  y: 850
+  width: 700
+  height: 450
+
+# worker hex placement
+
+hex:
+  x: 150
+  y: 600
+  width: 150
+  height: 150
+  str: '⬡'
+  font: 'Arial 30'
+  elipsize: :autoscale
+
+tdep_up:
+  x1: 200
+  y1: 900
+  x2: 186
+  y2: 1013
+  x3: 130
+  y3: 990
+
+tdep_straight:
+  x1: 375
+  y1: 900
+  x2: 345
+  y2: 1010
+  x3: 405
+  y3: 1010
+
+tdep_down:
+  x1: 650
+  y1: 900
+  x2: 720
+  y2: 990
+  x3: 664
+  y3: 1013
 
 # The "cut line", without rounded corners
 cut:

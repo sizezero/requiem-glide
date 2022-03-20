@@ -95,3 +95,7 @@ ideas without overly complicating the initial design.
 - research bonus for the person who created the tech
 - dependency suit could be directional: horizontal, diag up, diag down
   - we could have complicated and/or requirements
+- let's start with a single resource and see how fun the game could
+  be. Adding multiple resources complicates the game but could also
+  lead to interesting strategies. We could also create conversion
+  actions that players could utilize.

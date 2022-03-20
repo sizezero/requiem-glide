@@ -15,6 +15,25 @@ data = Squib.csv file: 'tech.csv'
 Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   background color: 'white'
 
+  text str: data['title'], layout: 'title'
+  text str: data['cost'],  layout: 'cost'
+  text str: data['value'], layout: 'value'
+
+  triangle fill_color: :red, layout: 'req'
+
+  text str: 'L-I', layout: 'level'
+
+  triangle fill_color: :blue,  layout: 'tdep_up'
+  triangle fill_color: :red,   layout: 'tdep_straight'
+  triangle fill_color: :green, layout: 'tdep_down'
+
+  # angle calc can't be in the layout file
+  rect  layout: 'body', angle: -Math::PI / 2
+  text str: "line one\nline two\nline three", layout: 'body', angle: -Math::PI / 2
+
+  #rect layout: 'hex'
+  text layout: 'hex'
+
   #player_colors = data['player'].map { |a| player2color[a] }
   #rect fill_color: player_colors, layout: 'top'
   #rect fill_color: player_colors, layout: 'bottom'
