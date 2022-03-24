@@ -35,7 +35,7 @@ Squib::Deck.new(cards: data['title'].size, layout: 'layouts/layout.yml') do
   text str: data['body'], layout: 'body', angle: -Math::PI / 2
 
   #rect layout: 'hex'
-  text color: data['level'].map { |a| a==1 || a==2 ? :black : '#f000'}, layout: 'hex'
+  text color: data['action'].map { |a| a==1 ? :black : '#f000'}, layout: 'hex'
 
   #player_colors = data['player'].map { |a| player2color[a] }
   #rect fill_color: player_colors, layout: 'top'

@@ -1,8 +1,13 @@
-count,level,suit,title,cost,body,dep_up,dep_straight,dep_down
-1,0,green,foo,1,just a line,yellow,yellow,yellow
-1,0,white,foo,2,"first Iine
-Second line
-Third line",red,green,blue
-1,0,blue,foo,3,,red,,
-1,0,black,foo,4,,,green,
-1,0,red,foo,1,,,,blue
+count,level,suit,title,cost,body,action,dep_up,dep_straight,dep_down
+1,0,green,Draw,,"Draw 1
+Keep 1",1,,,
+1,0,white,Increase hand size,,Maximum hand size: 4,,,,
+1,0,blue,Search,,"Search 2
+Mix with hand
+Discard 2",1,,,
+1,0,black,Lead,,"Play a card and place a cube on it.
+You must have cubes on all dependent cards.
+You must pay the existing card’s cost.",1,,,
+1,0,red,Follow,,"Place a cube on an existing card.
+You must have cubes on all dependent cards.
+You must pay the existing card’s cost.",1,,,
