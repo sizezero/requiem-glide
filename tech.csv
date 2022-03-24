@@ -1,7 +1,7 @@
 count,level,suit,title,cost,body,action,dep_up,dep_straight,dep_down
 1,0,green,Draw,,"Draw 1
 Keep 1",1,,,
-1,0,white,Increase hand size,,Maximum hand size: 4,,,,
+1,0,white,Hand,,Maximum hand size: 4,,,,
 1,0,blue,Search,,"Search 2
 Mix with hand
 Discard 2",1,,,
@@ -11,3 +11,50 @@ You must pay the existing card’s cost.",1,,,
 1,0,red,Follow,,"Place a cube on an existing card.
 You must have cubes on all dependent cards.
 You must pay the existing card’s cost.",1,,,
+1,1,green,Draw,,"Draw 1
+Keep 1",1,,green,
+1,1,white,Hand,,+1 Hand Size,,,white,
+1,1,blue,Search Boost,,"For all Search actions:
++1 Keep",,,blue,
+1,1,black,Lead,,"Play a card and place a cube on it.
+You must have cubes on all dependent cards.
+You must pay the existing card’s cost.",1,,black,
+1,1,red,Follow,,"Place a cube on an existing card.
+You must have cubes on all dependent cards.
+You must pay the existing card’s cost.",1,,red,
+2,2,green,Draw Boost,3,"For all draw actions:
++1 Draw
++1 Keep",,,,
+2,2,green,Draw L3,3,Card Draw may come from Level 3,,,,
+2,2,green,VP,3,"2 VP per token
+Players may place multiple tokens here
+Maximum 3 tokens total for all players",,,,
+2,2,white,Hand,3,+1 Hand Size,,,,
+1,2,white,Draw Unlock,3,Card Draw may come from Level 3,,,,
+1,2,white,Search Unlock,3,Card Search may come from Level 3,,,,
+2,2,white,VP,3,"2 VP per token
+Players may place multiple tokens here
+Maximum 3 tokens total for all players",,,,
+1,2,blue,Search,3,"Search 2
+Mix with hand
+Discard 2",1,,,
+1,2,blue,Search Boost,3,"For all Search actions:
++2 Search",,,,
+1,2,blue,Search Boost,3,"For all Search actions:
+-1 Discard",,,,
+2,2,blue,Search Unlock,3,Card Search may come from Level 3,,,,
+2,2,blue,VP,3,"2 VP per token
+Players may place multiple tokens here
+Maximum 3 tokens total for all players",,,,
+2,2,black,Lead Boost,3,"For all Lead actions:
+-1 Cost",,,,
+2,2,black,Lead Unlock,3,Level 3 cards can be played on Lead,,,,
+2,2,black,VP,3,"2 VP per token
+Players may place multiple tokens here
+Maximum 3 tokens total for all players",,,,
+2,2,red,Follow Boost,3,"For all Follow actions:
+-1 Cost",,,,
+2,2,red,Follow Unlock,3,Level 3 cards can be played on Follow,,,,
+2,2,red,VP,3,"2 VP per token
+Players may place multiple tokens here
+Maximum 3 tokens total for all players",,,,
