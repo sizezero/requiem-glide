@@ -24,9 +24,9 @@ value:
   align: left
 
 level:
-  x: 600
+  x: 550
   y: 90
-  width: 100
+  width: 150
   height: 80
   align: right
 
